@@ -1,16 +1,53 @@
-// Day 1: JavaScript Wiring
+// Store all tasks
+let tasks = [];
 
-// 1. Select the form element using its ID
-const taskForm = document.getElementById('task-form');
+// Select HTML elements
+const taskForm = document.getElementById("task-form");
+const taskTitle = document.getElementById("title");
+const taskDesc = document.getElementById("description");
+const attachmentInput = document.getElementById("image");
+const taskList = document.getElementById("task-list");
 
-// 2. Attach an event listener that waits for the user to click "Submit"
-taskForm.addEventListener('submit', function(event) {
-    
-    // Stop the browser from attempting to send data and refreshing the page
+// Form submit
+taskForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    
-    // 3. Print a message to the console to prove our button works
-    console.log("Success! The form was submitted without refreshing the page.");
-    console.log("We are ready to start capturing data and building tasks on Day 2!");
-    
+
+    const file = attachmentInput.files[0];
+
+    const newTask = {
+        id: Date.now(),
+        title: taskTitle.value,
+        desc: taskDesc.value,
+        image: file ? URL.createObjectURL(file) : ""
+    };
+
+    tasks.push(newTask);
+
+    renderTasks();
+
+    taskForm.reset();
 });
+
+// Render task cards
+function renderTasks() {
+
+    taskList.innerHTML = "";
+
+    tasks.forEach(function(task) {
+
+        taskList.insertAdjacentHTML("beforeend", `
+            <div class="task-card">
+                <div class="card-content">
+                    <div class="text">
+                        <h3>${task.title}</h3>
+                        <p>${task.desc}</p>
+                    </div>
+
+                    ${task.image ? `<img src="${task.image}" class="task-image">` : ""}
+                </div>
+            </div>
+        `);
+
+    });
+
+}
