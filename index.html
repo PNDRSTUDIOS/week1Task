@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: Task Master</title>
+    <!-- Link to our stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- App Header -->
+        <div class="header">
+            <h2>Task Master</h2>
+            <p>Day 1: Layout & Wiring</p>
+        </div>
+        
+        <!-- Task Form -->
+        <form id="task-form" class="form-container">
+            <div class="form-group">
+                <label for="task-title">Task Title</label>
+                <input type="text" id="task-title" placeholder="What needs to be done?" required>
+                
+                <label for="task-desc">Description</label>
+                <textarea id="task-desc" placeholder="Add some details..." required></textarea>
+                
+                <label for="task-image">Attachment</label>
+                <input type="file" id="task-image" accept="image/*">
+            </div>
+            
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Empty Container for Tasks -->
+        <div id="task-list" class="task-list">
+            <p class="placeholder-text">Task cards will appear here...</p>
+        </div>
+    </div>
+
+    <!-- Link to our JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

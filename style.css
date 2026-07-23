@@ -1,0 +1,106 @@
+/* Basic Browser Reset */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Centered Flexbox Layout */
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #2d3436;
+}
+
+/* Main Application Card */
+.app-container {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* Header Styling */
+.header {
+    background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+    padding: 25px;
+    color: white;
+}
+
+.header h2 { 
+    font-size: 24px; 
+    margin-bottom: 5px; 
+}
+
+/* Form Container */
+.form-container {
+    padding: 20px 25px;
+    background-color: #fafafa;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/* Input & Label Styling */
+label { 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #636e72; 
+    margin-top: 5px; 
+}
+
+input[type="text"], textarea, input[type="file"] {
+    padding: 12px 15px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, textarea:focus { 
+    border-color: #0984e3; 
+}
+
+textarea { 
+    resize: vertical; 
+    min-height: 80px; 
+}
+
+/* Button Styling & Hover Effect */
+button[type="submit"] {
+    background: #0984e3;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover { 
+    background: #076ebf; 
+}
+
+/* Task List Area */
+.task-list { 
+    padding: 25px; 
+}
+
+.placeholder-text {
+    text-align: center;
+    color: #b2bec3;
+    font-style: italic;
+}
