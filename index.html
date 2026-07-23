@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task Master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="header">
+            <h1>Task Master</h1>
+            <p>Day 1: Layout & Wiring</p>
+        </div>
+
+        <form id="task-form">
+
+            <label for="title">Task Title</label>
+            <input
+                type="text"
+                id="title"
+                placeholder="Enter task title"
+                required
+            >
+
+            <label for="description">Description</label>
+            <textarea
+                id="description"
+                placeholder="Enter description"
+                required
+            ></textarea>
+
+            <label for="image">Attachment</label>
+            <input
+                type="file"
+                id="image"
+                accept="image/*"
+            >
+
+            <button type="submit">
+                Add Task
+            </button>
+
+        </form>
+
+        <div id="task-list">
+            <p>Task cards will appear here...</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
