@@ -13,4 +13,10 @@ taskForm.addEventListener('submit', function(event) {
     console.log("Success! The form was submitted without refreshing the page.");
     console.log("We are ready to start capturing data and building tasks on Day 2!");
     
+
+
+
+
+
+    
 });
