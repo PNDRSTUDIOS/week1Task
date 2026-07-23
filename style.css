@@ -1,106 +1,118 @@
-/* Basic Browser Reset */
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Centered Flexbox Layout */
-body {
-    background-color: #f0f2f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-    color: #2d3436;
+body{
+    background:#eef2f7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
 
-/* Main Application Card */
-.app-container {
-    background: white;
+.container{
+    width:500px;
+    margin:40px auto;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.header{
+    background:linear-gradient(135deg,#1976d2,#64b5f6);
+    color:#fff;
+    padding:22px;
+}
+
+.header h1{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.header p{
+    font-size:15px;
+    opacity:.9;
+}
+
+.form{
+    padding:20px;
+    box-sizing:border-box;
+}
+
+label{
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    color:#444;
+    margin:15px 0 6px;
+    margin-left: 10px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"]{
+    width:calc(100% - 20px);
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin:0 10px;
+    font-size:14px;
+    outline:none;
+    transition:.3s;
+    box-sizing:border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus{
+    border-color:#2196f3;
+    box-shadow:0 0 5px rgba(33,150,243,.3);
+}
+
+textarea{
+    resize:none;
+    min-height:100px;
+}
+#task-list{
+    padding:20px;
+    text-align: left;
+}
+button{
     width: 100%;
-    max-width: 450px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    overflow: hidden;
+    margin-top:20px;
+    padding:12px;
+    background:#1976d2;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+.task-card{
+    margin-top:15px;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    background:#fff;
+}
+.card-content{
+    display:flex;
+      justify-content:space-between;
+    align-items:center;
+}
+.task-image{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-left:15px;
 }
 
-/* Header Styling */
-.header {
-    background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
-    padding: 25px;
-    color: white;
-}
-
-.header h2 { 
-    font-size: 24px; 
-    margin-bottom: 5px; 
-}
-
-/* Form Container */
-.form-container {
-    padding: 20px 25px;
-    background-color: #fafafa;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-/* Input & Label Styling */
-label { 
-    font-size: 13px; 
-    font-weight: bold; 
-    color: #636e72; 
-    margin-top: 5px; 
-}
-
-input[type="text"], textarea, input[type="file"] {
-    padding: 12px 15px;
-    border: 1px solid #dfe6e9;
-    border-radius: 8px;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.2s;
-}
-
-input[type="text"]:focus, textarea:focus { 
-    border-color: #0984e3; 
-}
-
-textarea { 
-    resize: vertical; 
-    min-height: 80px; 
-}
-
-/* Button Styling & Hover Effect */
-button[type="submit"] {
-    background: #0984e3;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    transition: background 0.2s;
-}
-
-button[type="submit"]:hover { 
-    background: #076ebf; 
-}
-
-/* Task List Area */
-.task-list { 
-    padding: 25px; 
-}
-
-.placeholder-text {
-    text-align: center;
-    color: #b2bec3;
-    font-style: italic;
+.text{
+    flex:1;
 }
