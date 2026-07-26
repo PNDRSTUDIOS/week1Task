@@ -11,8 +11,10 @@ body{
     background:#f3f4f6;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     min-height:100vh;
+    margin: 40px 0;
+    
 }
 
 
@@ -22,11 +24,14 @@ body{
     border-radius:10px;
     overflow:hidden;
     box-shadow:0 5px 15px rgba(0,0,0,0.9);
+    margin-top: 50px;
 }
 .logo{
     background:rgb(72, 130, 238);
     color:white;
     padding:20px;
+    margin: 20px;
+    
 }
 
 .logo h1{
@@ -66,7 +71,7 @@ body{
 }
 
 
-button{
+#task-form button{
     width:100%;
     margin-top:20px;
     padding:12px;
@@ -79,7 +84,7 @@ button{
     cursor:pointer;
 }
 
-button:hover{
+#task-form button:hover{
     background:#1565c0;
 }
 #task-list{
@@ -92,6 +97,9 @@ button:hover{
 #task-list p{
     color:gray;
     font-style:italic;
+    
+   
+  
 }
 .task-card{
     margin-top:15px;
@@ -104,17 +112,37 @@ button:hover{
 .card-content{
     display:flex;
       justify-content:space-between;
-    align-items:center;
+    align-items:flex-start;
 }
 .task-image{
-    width:100px;
-    height:100px;
+    width: 120px;
+    height:120px;
     object-fit:cover;
     border-radius:8px;
-    margin-right:15px;
+    margin-bottom:10px;
 }
 
 .text{
     flex:1;
 
 }
+.right-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button-group{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 120px;
+    margin-top: 10px;
+
+   
+    
+}
+.edit-btn, .delete-btn{
+  width: 55px;
+ 
+}
+
