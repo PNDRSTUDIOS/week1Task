@@ -12,7 +12,7 @@ const taskTitle = document.getElementById("title");
 const taskDesc = document.getElementById("description");
 const attachmentInput = document.getElementById("image");
 const taskList = document.getElementById("task-list");
-const submitButton = taskForm.querySelector("button[type='submit']");
+const submitButton = taskForm.querySelector("button[type='submit']");  
 
 const savedTasks =
     JSON.parse(localStorage.getItem("tasks")) ||
@@ -80,7 +80,9 @@ function renderTasks() {
                         <p>${task.desc}</p>
                     </div>
                     <div class="right-side">
+                    
 
+                    
                     ${task.image ? `<img src="${task.image}" class="task-image">` : ""}
                 <div class="button-group">
                 <button data-id="${task.id}" onclick="editTask(event)">Edit</button>
