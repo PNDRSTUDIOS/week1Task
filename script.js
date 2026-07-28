@@ -1,4 +1,7 @@
-let tasks = [];
+let tasks = 
+JSON.parse(localStorage.getItem("tasks")) ||
+JSON.parse(sessionStorage.getItem("tasks")) ||
+[];
 let editID = null;
 
 const taskForm = document.getElementById("task-form");
@@ -7,6 +10,12 @@ const taskDesc = document.getElementById("description");
 const attachmentInput = document.getElementById("attachment-input");
 const taskList = document.getElementById("task-list");
 const submitButton = document.querySelector('button[type="submit"]');
+
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    sessionStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
 
 taskForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -22,7 +31,7 @@ taskForm.addEventListener("submit", function(event) {
     if (file) {
         taskToUpdate.image = URL.createObjectURL(file);
     }
-
+    saveTasks();
     editID = null;
     submitButton.textContent = "Add Task";
 } else {
@@ -35,8 +44,9 @@ taskForm.addEventListener("submit", function(event) {
     };
 
     tasks.push(newTask);
-}
 
+    saveTasks();
+}
     renderTasks();
     taskForm.reset();
 });
@@ -93,7 +103,9 @@ function editTask(id) {
 function deleteTask(id) {
 
     tasks = tasks.filter(task => task.id !== id);
+    saveTasks();
 
     renderTasks();
 
     }
+renderTasks();
