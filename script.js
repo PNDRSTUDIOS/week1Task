@@ -2,6 +2,10 @@
 let tasks = [];
 let editingTaskId = null;
 
+function saveTasks() {
+    sessionStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
 const taskForm = document.getElementById("task-form");
 const taskTitle = document.getElementById("title");
@@ -9,6 +13,15 @@ const taskDesc = document.getElementById("description");
 const attachmentInput = document.getElementById("image");
 const taskList = document.getElementById("task-list");
 const submitButton = taskForm.querySelector("button[type='submit']");
+
+const savedTasks =
+    JSON.parse(localStorage.getItem("tasks")) ||
+    JSON.parse(sessionStorage.getItem("tasks"));
+
+if (savedTasks) {
+    tasks = savedTasks;
+    renderTasks();
+}
 
 
 taskForm.addEventListener("submit", function(event) {
@@ -29,6 +42,8 @@ taskForm.addEventListener("submit", function(event) {
     editingTaskId = null;
     submitButton.textContent = "Add Task";
 
+    saveTasks();
+
     renderTasks();
     taskForm.reset();
     return;
@@ -42,6 +57,8 @@ taskForm.addEventListener("submit", function(event) {
     };
 
     tasks.push(newTask);
+
+    saveTasks();
 
     renderTasks();
 
@@ -79,6 +96,7 @@ function renderTasks() {
 const deleteTask = (event) => {
     const taskId = Number(event.target.dataset.id);
     tasks = tasks.filter(task => task.id !== taskId);
+    saveTasks();
     renderTasks();
 }
 const editTask = (event) => {
